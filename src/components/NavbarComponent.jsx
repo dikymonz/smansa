@@ -12,18 +12,18 @@ export const navLinks = [
   },
   {
     id: 2,
-    path: "Articles",
-    text: "Articles",
+    path: "berita",
+    text: "Berita",
   },
   {
     id: 3,
-    path: "Guru",
+    path: "guru",
     text: "Guru",
   },
   {
     id: 4,
-    path: "About",
-    text: "About",
+    path: "tentang",
+    text: "Tentang",
   },
 ];
 

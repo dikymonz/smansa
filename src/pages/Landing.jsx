@@ -1,14 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import HeroImage from "../assets/img/HeroImg.svg";
-import { ArticleTerbaru } from "../data/index";
-import { BsChevronRight } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-
-import Misicomponent from "../components/Misicomponent";
 
 const HomePage = () => {
-  let naviget = useNavigate();
-
   const handleScrollToMisi = () => {
     const misiElement = document.getElementById("misi");
     misiElement.scrollIntoView({ behavior: "smooth" });
@@ -58,51 +51,6 @@ const HomePage = () => {
           </Row>
         </Container>
       </header>
-      <div className="articles w-100 min-vh-100">
-        <Container>
-          <Row>
-            <Misicomponent />
-          </Row>
-          <Row>
-            {ArticleTerbaru.map((kelas) => {
-              return (
-                <Col key={kelas.id}>
-                  <img
-                    src={kelas.image}
-                    alt="unsplash.com"
-                    className="w-100 mb-5 rounded-top"
-                  />
-                  <div className="mb-2 px-3">
-                    <i className={kelas.star1}></i>
-                    <i className={kelas.star2}></i>
-                    <i className={kelas.star3}></i>
-                    <i className={kelas.star4}></i>
-                    <i className={kelas.star5}></i>
-                  </div>
-                  <h5 className="mb-5 px-3">{kelas.title}</h5>
-                  <div className="ket d-flex justify-content-between align-items-center px-3 pb-3">
-                    <p className="m-0 text-primary">terbaru</p>
-                    <button className="btn btn-outline-info rounded-1">
-                      {kelas.btn}
-                    </button>
-                  </div>
-                </Col>
-              );
-            })}
-          </Row>
-          <Row>
-            <Col className="text-center">
-              <button
-                className="btn btn-primary rounded-5 btn-lg"
-                onClick={() => naviget("/articles")}
-              >
-                Lihat Semua Article
-                <BsChevronRight className="ms-1" />
-              </button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
     </div>
   );
 };
